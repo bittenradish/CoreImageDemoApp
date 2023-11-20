@@ -64,6 +64,7 @@
                     <connections>
                         <segue destination="wsu-aQ-6ta" kind="show" identifier="filter" id="rXR-bq-LVb"/>
                         <segue destination="6WC-4E-v0r" kind="show" identifier="blur" id="CT0-30-LVR"/>
+                        <segue destination="Z9D-7c-Fv1" kind="show" identifier="Red eye" id="X7m-7W-5H7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYb-f4-KFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2718" y="-305"/>
+            <point key="canvasLocation" x="2569" y="-886"/>
         </scene>
         <!--Filter-->
         <scene sceneID="Q6n-jy-wFf">
@@ -100,7 +101,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaR-tF-8md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="431"/>
+            <point key="canvasLocation" x="2569" y="4"/>
+        </scene>
+        <!--Red eye-->
+        <scene sceneID="2fM-oN-5Os">
+            <objects>
+                <viewController id="Z9D-7c-Fv1" customClass="RedEyeViewController" customModule="CoreImageDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="81K-kF-fC6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redEye" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-dt-Guv">
+                                <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="511.33333333333326"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s6g-CZ-UCE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s6g-CZ-UCE" firstAttribute="top" secondItem="lcV-dt-Guv" secondAttribute="top" id="2KQ-LV-pgk"/>
+                            <constraint firstItem="lcV-dt-Guv" firstAttribute="height" secondItem="81K-kF-fC6" secondAttribute="height" multiplier="0.6" id="Hao-ko-uYJ"/>
+                            <constraint firstItem="s6g-CZ-UCE" firstAttribute="trailing" secondItem="lcV-dt-Guv" secondAttribute="trailing" id="KEB-km-gM4"/>
+                            <constraint firstItem="lcV-dt-Guv" firstAttribute="leading" secondItem="s6g-CZ-UCE" secondAttribute="leading" id="Y89-rZ-4xk"/>
+                            <constraint firstItem="lcV-dt-Guv" firstAttribute="centerX" secondItem="s6g-CZ-UCE" secondAttribute="centerX" id="eAU-oS-ySM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Red eye" id="2Wy-Ok-2ML"/>
+                    <connections>
+                        <outlet property="imageView" destination="lcV-dt-Guv" id="Iqz-rn-8Xn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6k5-pR-Fn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NC6-O9-Hjs">
@@ -123,6 +155,10 @@
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="redEye" width="800" height="1067"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
