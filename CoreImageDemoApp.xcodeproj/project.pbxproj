@@ -14,7 +14,7 @@
 		19C8CC362B0A54DC00B9D374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C8CC342B0A54DC00B9D374 /* LaunchScreen.storyboard */; };
 		19EACB082B0A848800ECE599 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB072B0A848800ECE599 /* FilterCell.swift */; };
 		19EACB0A2B0A857300ECE599 /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB092B0A857300ECE599 /* FilterListViewController.swift */; };
-		19EACB0F2B0AC53000ECE599 /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB0E2B0AC53000ECE599 /* BlurViewController.swift */; };
+		19EACB0F2B0AC53000ECE599 /* ErrorBlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB0E2B0AC53000ECE599 /* ErrorBlurViewController.swift */; };
 		19EACB112B0AC54700ECE599 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB102B0AC54700ECE599 /* FilterViewController.swift */; };
 		19EACB132B0AD2B900ECE599 /* RedEyeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		19C8CC372B0A54DC00B9D374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19EACB072B0A848800ECE599 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		19EACB092B0A857300ECE599 /* FilterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewController.swift; sourceTree = "<group>"; };
-		19EACB0E2B0AC53000ECE599 /* BlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
+		19EACB0E2B0AC53000ECE599 /* ErrorBlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBlurViewController.swift; sourceTree = "<group>"; };
 		19EACB102B0AC54700ECE599 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedEyeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +88,7 @@
 		19EACB0D2B0AC50E00ECE599 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				19EACB0E2B0AC53000ECE599 /* BlurViewController.swift */,
+				19EACB0E2B0AC53000ECE599 /* ErrorBlurViewController.swift */,
 				19EACB102B0AC54700ECE599 /* FilterViewController.swift */,
 				19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */,
 			);
@@ -171,7 +171,7 @@
 				19EACB132B0AD2B900ECE599 /* RedEyeViewController.swift in Sources */,
 				19EACB0A2B0A857300ECE599 /* FilterListViewController.swift in Sources */,
 				19EACB082B0A848800ECE599 /* FilterCell.swift in Sources */,
-				19EACB0F2B0AC53000ECE599 /* BlurViewController.swift in Sources */,
+				19EACB0F2B0AC53000ECE599 /* ErrorBlurViewController.swift in Sources */,
 				19C8CC2C2B0A54DB00B9D374 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

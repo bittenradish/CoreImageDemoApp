@@ -63,25 +63,50 @@
                     </navigationItem>
                     <connections>
                         <segue destination="wsu-aQ-6ta" kind="show" identifier="filter" id="rXR-bq-LVb"/>
-                        <segue destination="6WC-4E-v0r" kind="show" identifier="blur" id="CT0-30-LVR"/>
-                        <segue destination="Z9D-7c-Fv1" kind="show" identifier="Red eye" id="X7m-7W-5H7"/>
+                        <segue destination="Z9D-7c-Fv1" kind="show" identifier="red eye" id="X7m-7W-5H7"/>
+                        <segue destination="6WC-4E-v0r" kind="show" identifier="error_blur" id="eeE-aE-ZA3"/>
+                        <segue destination="MSL-8R-BHA" kind="show" identifier="Blur" id="KYn-Hd-NdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
         </scene>
-        <!--Blur-->
+        <!--Bad Blur-->
         <scene sceneID="etn-OL-gzk">
             <objects>
-                <viewController id="6WC-4E-v0r" sceneMemberID="viewController">
+                <viewController id="6WC-4E-v0r" customClass="ErrorBlurViewController" customModule="CoreImageDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsz-W5-MTn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landscape" translatesAutoresizingMaskIntoConstraints="NO" id="sn5-tm-VdK">
+                                <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="511.33333333333326"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="20" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGs-9j-ho4">
+                                <rect key="frame" x="13" y="714.33333333333337" width="367" height="31"/>
+                                <connections>
+                                    <action selector="onSliderChanged:" destination="6WC-4E-v0r" eventType="valueChanged" id="RDj-Su-sRa"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bJG-rG-3KK"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="LGs-9j-ho4" firstAttribute="leading" secondItem="bJG-rG-3KK" secondAttribute="leading" constant="15" id="0iv-Xd-suz"/>
+                            <constraint firstItem="LGs-9j-ho4" firstAttribute="top" secondItem="sn5-tm-VdK" secondAttribute="bottom" constant="100" id="CAs-ye-NSc"/>
+                            <constraint firstItem="sn5-tm-VdK" firstAttribute="leading" secondItem="bJG-rG-3KK" secondAttribute="leading" id="EkP-Xe-0yy"/>
+                            <constraint firstItem="sn5-tm-VdK" firstAttribute="top" secondItem="bJG-rG-3KK" secondAttribute="top" id="Ipb-GT-F5h"/>
+                            <constraint firstItem="bJG-rG-3KK" firstAttribute="trailing" secondItem="sn5-tm-VdK" secondAttribute="trailing" id="Noc-jA-Jxn"/>
+                            <constraint firstItem="sn5-tm-VdK" firstAttribute="height" secondItem="bsz-W5-MTn" secondAttribute="height" multiplier="0.6" id="hkA-eC-tca"/>
+                            <constraint firstItem="bJG-rG-3KK" firstAttribute="trailing" secondItem="LGs-9j-ho4" secondAttribute="trailing" constant="15" id="r8X-un-ock"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Blur" id="TEg-Ps-gpk"/>
+                    <navigationItem key="navigationItem" title="Bad Blur" id="TEg-Ps-gpk"/>
+                    <connections>
+                        <outlet property="imageView" destination="sn5-tm-VdK" id="Rui-sr-nyf"/>
+                        <outlet property="slider" destination="LGs-9j-ho4" id="7ok-Qg-n1h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYb-f4-KFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,18 +177,35 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="QiU-sC-beU">
+            <objects>
+                <viewController id="MSL-8R-BHA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNW-aa-3Un">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cqC-T9-9Ti"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QvB-A0-0jH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6M-Me-pSe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="934"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="landscape" width="5304" height="7952"/>
         <image name="redEye" width="800" height="1067"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
