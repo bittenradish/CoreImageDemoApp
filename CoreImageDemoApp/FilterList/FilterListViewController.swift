@@ -11,7 +11,7 @@ private let reuseIdentifier = "filterCell"
 
 class FilterListViewController: UICollectionViewController {
     
-    private let filterList = ["Blur", "Sepia", "Custom Filter", "filter", "Red eye"]
+    private let filterList = ["Blur", "Sepia", "Custom Filter", "Filter", "Red eye"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +82,7 @@ class FilterListViewController: UICollectionViewController {
             }
         }
         
-        let selectedFilter = filterList[indexPath.item]
+        let selectedFilter = filterList[indexPath.item].lowercased()
         if selectedFilter == "filter"{
             performSegue(withIdentifier: "filter", sender: nil)
         }

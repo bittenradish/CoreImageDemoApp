@@ -13,10 +13,16 @@ class RedEyeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var inputImage = imageView.image
+        let inputImage = imageView.image
         
         if var ciImage = CIImage(image: inputImage!){
-            let filterList = ciImage.autoAdjustmentFilters()
+            
+            let ciDetector = CIDetector(ofType: CIFeatureTypeFace, context: nil, options: [CIDetectorImageOrientation: CGImagePropertyOrientation.up])
+            
+            
+            let options = [CIImageAutoAdjustmentOption.features: ciDetector ?? CIDetector()]
+            
+            let filterList = ciImage.autoAdjustmentFilters(options: options)
             filterList.forEach{ filter in
                 filter.setValue(ciImage, forKey: kCIInputImageKey)
                 if let filteredImage = filter.outputImage{
