@@ -273,8 +273,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ULd-Hq-0Se">
                                 <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="511.33333333333326"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXl-i7-80F">
-                                <rect key="frame" x="80" y="718.66666666666663" width="62" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXl-i7-80F">
+                                <rect key="frame" x="15" y="718.66666666666663" width="127" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -285,8 +285,8 @@
                                     <action selector="onToggleSwitched:" destination="5Dj-hH-ydo" eventType="valueChanged" id="aEe-KQ-epL"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inverted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-8V-AKQ">
-                                <rect key="frame" x="250.99999999999997" y="718.66666666666663" width="65.666666666666657" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inverted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-8V-AKQ">
+                                <rect key="frame" x="251" y="718.66666666666663" width="127" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -296,11 +296,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zh6-ee-HZ2" firstAttribute="top" secondItem="ULd-Hq-0Se" secondAttribute="bottom" constant="100" id="3Bf-aK-1Je"/>
+                            <constraint firstItem="jXl-i7-80F" firstAttribute="leading" secondItem="YQ4-ZI-HzN" secondAttribute="leading" constant="15" id="FT6-3N-qbJ"/>
                             <constraint firstItem="jXl-i7-80F" firstAttribute="centerY" secondItem="Zh6-ee-HZ2" secondAttribute="centerY" id="NUP-LF-YOH"/>
                             <constraint firstItem="ULd-Hq-0Se" firstAttribute="top" secondItem="YQ4-ZI-HzN" secondAttribute="top" id="Oze-6l-5jT"/>
                             <constraint firstItem="Zh6-ee-HZ2" firstAttribute="leading" secondItem="jXl-i7-80F" secondAttribute="trailing" constant="30" id="Rsr-2E-Aey"/>
                             <constraint firstItem="Xqt-8V-AKQ" firstAttribute="leading" secondItem="Zh6-ee-HZ2" secondAttribute="trailing" constant="30" id="dXP-Wo-ukT"/>
                             <constraint firstItem="Xqt-8V-AKQ" firstAttribute="centerY" secondItem="Zh6-ee-HZ2" secondAttribute="centerY" id="eSV-li-BCK"/>
+                            <constraint firstItem="YQ4-ZI-HzN" firstAttribute="trailing" secondItem="Xqt-8V-AKQ" secondAttribute="trailing" constant="15" id="kq3-wu-V08"/>
                             <constraint firstItem="ULd-Hq-0Se" firstAttribute="leading" secondItem="YQ4-ZI-HzN" secondAttribute="leading" id="rx2-cM-YVh"/>
                             <constraint firstItem="YQ4-ZI-HzN" firstAttribute="trailing" secondItem="ULd-Hq-0Se" secondAttribute="trailing" id="w2b-wd-fn1"/>
                             <constraint firstItem="ULd-Hq-0Se" firstAttribute="height" secondItem="YP8-FA-cTa" secondAttribute="height" multiplier="0.6" id="wdL-t8-fVa"/>
