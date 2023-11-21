@@ -11,7 +11,7 @@ private let reuseIdentifier = "filterCell"
 
 class FilterListViewController: UICollectionViewController {
     
-    private let filterList = ["Blur", "Bad Blur", "Sepia", "Custom Filter", "Filter", "Auto Enhancement"]
+    private let filterList = ["Blur", "Bad Blur", "Sepia", "Custom Filter", "Auto Enhancement"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +83,8 @@ class FilterListViewController: UICollectionViewController {
         }
         
         let selectedFilter = filterList[indexPath.item].lowercased()
-        if selectedFilter == "filter"{
-            performSegue(withIdentifier: "filter", sender: nil)
+        if selectedFilter == "sepia"{
+            performSegue(withIdentifier: "sepia", sender: nil)
         }
         if selectedFilter == "bad blur"{
             performSegue(withIdentifier: "error_blur", sender: nil)

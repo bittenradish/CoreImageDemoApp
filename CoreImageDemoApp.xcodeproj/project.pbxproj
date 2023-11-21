@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1959CD852B0C212900EB693E /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD842B0C212900EB693E /* BlurViewController.swift */; };
+		1959CD872B0C2AB000EB693E /* SepiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD862B0C2AB000EB693E /* SepiaViewController.swift */; };
 		19C8CC2A2B0A54DB00B9D374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */; };
 		19C8CC2C2B0A54DB00B9D374 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */; };
 		19C8CC312B0A54DB00B9D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C8CC2F2B0A54DB00B9D374 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1959CD842B0C212900EB693E /* BlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
+		1959CD862B0C2AB000EB693E /* SepiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepiaViewController.swift; sourceTree = "<group>"; };
 		19C8CC262B0A54DB00B9D374 /* CoreImageDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreImageDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				19EACB102B0AC54700ECE599 /* FilterViewController.swift */,
 				19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */,
 				1959CD842B0C212900EB693E /* BlurViewController.swift */,
+				1959CD862B0C2AB000EB693E /* SepiaViewController.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				19EACB112B0AC54700ECE599 /* FilterViewController.swift in Sources */,
 				19C8CC2A2B0A54DB00B9D374 /* AppDelegate.swift in Sources */,
+				1959CD872B0C2AB000EB693E /* SepiaViewController.swift in Sources */,
 				19EACB132B0AD2B900ECE599 /* RedEyeViewController.swift in Sources */,
 				19EACB0A2B0A857300ECE599 /* FilterListViewController.swift in Sources */,
 				19EACB082B0A848800ECE599 /* FilterCell.swift in Sources */,

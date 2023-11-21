@@ -1,41 +1,40 @@
 //
-//  BlurViewController.swift
+//  SepiaViewController.swift
 //  CoreImageDemoApp
 //
 //  Created by Rashid on 21.11.23.
 //
 
 import UIKit
-import CoreImage
 
-class BlurViewController: UIViewController {
+class SepiaViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var slider: UISlider!
     
-    @IBOutlet weak var radiusLabel: UILabel!
+    @IBOutlet weak var intensityLable: UILabel!
+    
     
     let ciContext = CIContext(options: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "testImage.jpg")
-        radiusLabel.text = getRadiusString(radius: 0.0)
+        intensityLable.text = getIntencityString(radius: 0.0)
     }
     
-    private func getRadiusString(radius: Float) -> String {
-        "Radius: \(radius.rounded())"
+    private func getIntencityString(radius: Float) -> String {
+        String(format: "Inencity: %.2f", radius)
     }
     
     @IBAction func onSliderChanged(_ sender: Any) {
         let sliderVal = slider.value
-        let value = CGFloat(sliderVal)
-        radiusLabel.text = getRadiusString(radius: sliderVal)
-        imageView.image = applyFilter(filterValue: value)
+        intensityLable.text = getIntencityString(radius: sliderVal)
+        imageView.image = applyFilter(filterValue: sliderVal)
     }
     
-    func applyFilter(filterValue: CGFloat) -> UIImage? {
+    func applyFilter(filterValue: Float) -> UIImage? {
         // Get the original image
         guard let originalImage = UIImage(named: "testImage.jpg") else {
             return nil
@@ -43,10 +42,10 @@ class BlurViewController: UIViewController {
         
         let originalCIImage = CIImage(image: originalImage)!
         
-        guard let filter = CIFilter(name: "CIGaussianBlur") else { return nil }
+        guard let filter = CIFilter(name: "CISepiaTone") else { return nil }
         
         filter.setValue(originalCIImage, forKey: kCIInputImageKey)
-        filter.setValue(filterValue, forKey: kCIInputRadiusKey)
+        filter.setValue(filterValue, forKey: kCIInputIntensityKey)
         
         let filteredCIImage = filter.outputImage!
         
