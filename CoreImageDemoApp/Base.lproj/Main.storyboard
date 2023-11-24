@@ -67,6 +67,7 @@
                         <segue destination="6WC-4E-v0r" kind="show" identifier="error_blur" id="eeE-aE-ZA3"/>
                         <segue destination="MSL-8R-BHA" kind="show" identifier="blur" id="KYn-Hd-NdL"/>
                         <segue destination="5Dj-hH-ydo" kind="show" identifier="invert" id="cFn-1g-MdS"/>
+                        <segue destination="H0H-wo-WyK" kind="show" identifier="custom_filter" id="FIF-48-SSq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -319,6 +320,63 @@
             </objects>
             <point key="canvasLocation" x="2413" y="995"/>
         </scene>
+        <!--Custom Filter-->
+        <scene sceneID="314-Yy-P97">
+            <objects>
+                <viewController id="H0H-wo-WyK" customClass="CustomFilterViewController" customModule="CoreImageDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xE0-TN-2P9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9wa-Sc-hqy">
+                                <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="511.33333333333326"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDg-5b-rb0">
+                                <rect key="frame" x="15" y="718.66666666666663" width="127" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kmP-Tb-QKR">
+                                <rect key="frame" x="172" y="714.33333333333337" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onTooggleChanged:" destination="H0H-wo-WyK" eventType="valueChanged" id="OLM-hy-0Hf"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inverted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xC-KJ-d5k">
+                                <rect key="frame" x="251" y="718.66666666666663" width="127" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6mw-e0-85S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pDg-5b-rb0" firstAttribute="centerY" secondItem="kmP-Tb-QKR" secondAttribute="centerY" id="BRb-6n-uCc"/>
+                            <constraint firstItem="kmP-Tb-QKR" firstAttribute="top" secondItem="9wa-Sc-hqy" secondAttribute="bottom" constant="100" id="EtT-uJ-wCR"/>
+                            <constraint firstItem="9wa-Sc-hqy" firstAttribute="leading" secondItem="6mw-e0-85S" secondAttribute="leading" id="N0h-zs-cB7"/>
+                            <constraint firstItem="kmP-Tb-QKR" firstAttribute="leading" secondItem="pDg-5b-rb0" secondAttribute="trailing" constant="30" id="NVT-m1-Jxb"/>
+                            <constraint firstItem="6mw-e0-85S" firstAttribute="trailing" secondItem="0xC-KJ-d5k" secondAttribute="trailing" constant="15" id="SjC-qy-j5r"/>
+                            <constraint firstItem="0xC-KJ-d5k" firstAttribute="leading" secondItem="kmP-Tb-QKR" secondAttribute="trailing" constant="30" id="Vcd-f9-DNP"/>
+                            <constraint firstItem="6mw-e0-85S" firstAttribute="trailing" secondItem="9wa-Sc-hqy" secondAttribute="trailing" id="XJC-2V-sqQ"/>
+                            <constraint firstItem="0xC-KJ-d5k" firstAttribute="centerY" secondItem="kmP-Tb-QKR" secondAttribute="centerY" id="Y2a-df-H6C"/>
+                            <constraint firstItem="9wa-Sc-hqy" firstAttribute="top" secondItem="6mw-e0-85S" secondAttribute="top" id="g8o-QN-itO"/>
+                            <constraint firstItem="pDg-5b-rb0" firstAttribute="leading" secondItem="6mw-e0-85S" secondAttribute="leading" constant="15" id="is3-SU-g55"/>
+                            <constraint firstItem="9wa-Sc-hqy" firstAttribute="height" secondItem="xE0-TN-2P9" secondAttribute="height" multiplier="0.6" id="pZW-Ix-uvO"/>
+                            <constraint firstItem="kmP-Tb-QKR" firstAttribute="centerX" secondItem="6mw-e0-85S" secondAttribute="centerX" id="rIZ-6f-dMh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Custom Filter" id="nmd-aU-vaq"/>
+                    <connections>
+                        <outlet property="imageView" destination="9wa-Sc-hqy" id="Tuu-qf-BcB"/>
+                        <outlet property="toggle" destination="kmP-Tb-QKR" id="OeG-y7-Jkk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUb-gK-xvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="1872"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
@@ -328,10 +386,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

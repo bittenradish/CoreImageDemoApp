@@ -102,6 +102,10 @@ class FilterListViewController: UICollectionViewController {
             performSegue(withIdentifier: "invert", sender: nil)
         }
         
+        if selectedFilter == "custom filter" {
+            performSegue(withIdentifier: "custom_filter", sender: nil)
+        }
+        
     }
     
 }
