@@ -133,46 +133,4 @@ class CustomFilter : CIFilter {
         
         return filter.outputImage ?? inputImage
     }
-    
-    private func test() -> CIImage? {
-        guard let inputImage = inputImage else
-        {
-            return nil
-        }
-        let edgesImage = inputImage
-            .applyingFilter(
-                "CIEdges",
-                parameters: [
-                    kCIInputIntensityKey: 10])
-        
-        let glowingImage = CIFilter(
-            name: "CIColorControls",
-            parameters: [
-                kCIInputImageKey: edgesImage,
-                kCIInputSaturationKey: 1.75])?
-            .outputImage?
-            .applyingFilter(
-                "CIBloom",
-                parameters: [
-                    kCIInputRadiusKey: 2.5,
-                    kCIInputIntensityKey: 1.25])
-            .cropped(to: inputImage.extent)
-        
-        let darkImage = inputImage
-            .applyingFilter(
-                "CIPhotoEffectNoir")
-            .applyingFilter(
-                "CIExposureAdjust",
-                parameters: [
-                    "inputEV": -1.5])
-        
-        let finalComposite = glowingImage!
-            .applyingFilter(
-                "CIAdditionCompositing",
-                parameters: [
-                    kCIInputBackgroundImageKey:
-                        darkImage])
-        
-        return finalComposite
-    }
 }
