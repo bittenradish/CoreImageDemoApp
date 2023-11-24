@@ -8,42 +8,65 @@
 import UIKit
 
 class CustomFilterViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var toggle: UISwitch!
+    @IBOutlet weak var edgeIntensitySlider: UISlider!
     
-    let ciContext = CIContext()
+    @IBOutlet weak var saturationSlider: UISlider!
+    
+    @IBOutlet weak var radiusSlider: UISlider!
+    
+    @IBOutlet weak var bloomInensitySlider: UISlider!
+    
+    @IBOutlet weak var expositionSlider: UISlider!
+    
+    private let ciContext = CIContext()
+    private let filter = CustomFilter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = setOriginalImage()
         
     }
     
-    
-    @IBAction func onTooggleChanged(_ sender: Any) {
-        if(toggle.isOn){
-            imageView.image = applyFilter()
-        }else{
-            imageView.image = setOriginalImage()
-        }
+    private func setOriginalImage() -> UIImage? {
+        UIImage(named: "redEye.jpg")
     }
     
-    private func setOriginalImage() -> UIImage? {
-        UIImage(named: "voldemort.jpg")
+    @IBAction func resetImage(_ sender: Any) {
+        imageView.image = setOriginalImage()
+    }
+    @IBAction func applyDefaultFilter(_ sender: Any) {
+        edgeIntensitySlider.value = 10
+        saturationSlider.value = 1.75
+        radiusSlider.value = 2.5
+        bloomInensitySlider.value = 1.25
+        expositionSlider.value = -1.5
+        filter.setDefaults()
+        imageView.image = applyFilter()
+    }
+    
+    
+    @IBAction func slidersChanged(_ sender: Any) {
+        filter.setValue(edgeIntensitySlider.value as NSNumber, forKey: kCIInputEdgeIntencity)
+        filter.setValue(saturationSlider.value as NSNumber, forKey: kCIInputSaturationKey)
+        filter.setValue(radiusSlider.value as NSNumber, forKey: kCIInputRadiusKey)
+        filter.setValue(bloomInensitySlider.value as NSNumber, forKey: kCIInputBloomIntencity)
+        filter.setValue(expositionSlider.value as NSNumber, forKey: kCIInputEVKey)
+        
+        if let output = applyFilter() {
+            imageView.image = output
+        }
     }
     
     private func applyFilter() -> UIImage? {
         // Get the original image
-        guard let originalImage = UIImage(named: "voldemort.jpg") else {
+        guard let originalImage = setOriginalImage() else {
             return nil
         }
         
         let originalCIImage = CIImage(image: originalImage)!
-        
-        let filter = CustomFilter()
-        
-        print(filter.attributes)
         
         filter.setValue(originalCIImage, forKey: kCIInputImageKey)
         

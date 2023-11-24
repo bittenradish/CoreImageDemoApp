@@ -30,6 +30,14 @@ class CustomFilter : CIFilter {
         kCIInputEVKey: NSNumber.self
     ]
     
+    override func setDefaults() {
+        ciEdgeIntesity = 10
+        saturation = 1.75
+        radius = 2.5
+        bloomIntensity = 1.25
+        inputEv = -1.5
+    }
+    
     override var attributes: [String : Any] {
         listOfAttributes
     }
