@@ -11,7 +11,7 @@ private let reuseIdentifier = "filterCell"
 
 class FilterListViewController: UICollectionViewController {
     
-    private let filterList = ["blur", "Sepia", "Custom Filter", "filter"]
+    private let filterList = ["Blur", "Bad Blur", "Sepia", "Invert color","Custom Filter", "Auto Enhancement"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class FilterListViewController: UICollectionViewController {
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        // Get the new view controller using [segue destinationViewController].
     //        // Pass the selected object to the new view controller.
-    //        
+    //
     //    }
     
     // MARK: UICollectionViewDataSource
@@ -82,12 +82,24 @@ class FilterListViewController: UICollectionViewController {
             }
         }
         
-        let selectedFilter = filterList[indexPath.item]
-        if selectedFilter == "filter"{
-            performSegue(withIdentifier: "filter", sender: nil)
+        let selectedFilter = filterList[indexPath.item].lowercased()
+        if selectedFilter == "sepia"{
+            performSegue(withIdentifier: "sepia", sender: nil)
         }
-        if selectedFilter == "blur"{
+        if selectedFilter == "bad blur"{
+            performSegue(withIdentifier: "error_blur", sender: nil)
+        }
+        
+        if selectedFilter == "auto enhancement"{
+            performSegue(withIdentifier: "auto_enh", sender: nil)
+        }
+        
+        if selectedFilter == "blur" {
             performSegue(withIdentifier: "blur", sender: nil)
+        }
+        
+        if selectedFilter == "invert color" {
+            performSegue(withIdentifier: "invert", sender: nil)
         }
         
     }
