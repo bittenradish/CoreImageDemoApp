@@ -11,6 +11,8 @@
 		1959CD872B0C2AB000EB693E /* SepiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD862B0C2AB000EB693E /* SepiaViewController.swift */; };
 		1959CD892B0C346900EB693E /* InvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD882B0C346900EB693E /* InvertViewController.swift */; };
 		198BA87C2B10F76100D828C4 /* CustomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BA87B2B10F76100D828C4 /* CustomFilter.swift */; };
+		198BA87E2B11505300D828C4 /* AutoEnhancementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BA87D2B11505300D828C4 /* AutoEnhancementViewController.swift */; };
+		198BA8802B1161C500D828C4 /* LumosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BA87F2B1161C500D828C4 /* LumosViewController.swift */; };
 		19C8CC2A2B0A54DB00B9D374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */; };
 		19C8CC2C2B0A54DB00B9D374 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */; };
 		19C8CC312B0A54DB00B9D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C8CC2F2B0A54DB00B9D374 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		1959CD862B0C2AB000EB693E /* SepiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepiaViewController.swift; sourceTree = "<group>"; };
 		1959CD882B0C346900EB693E /* InvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertViewController.swift; sourceTree = "<group>"; };
 		198BA87B2B10F76100D828C4 /* CustomFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilter.swift; sourceTree = "<group>"; };
+		198BA87D2B11505300D828C4 /* AutoEnhancementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoEnhancementViewController.swift; sourceTree = "<group>"; };
+		198BA87F2B1161C500D828C4 /* LumosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumosViewController.swift; sourceTree = "<group>"; };
 		19C8CC262B0A54DB00B9D374 /* CoreImageDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreImageDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				1959CD842B0C212900EB693E /* BlurViewController.swift */,
 				1959CD862B0C2AB000EB693E /* SepiaViewController.swift */,
 				1959CD882B0C346900EB693E /* InvertViewController.swift */,
+				198BA87D2B11505300D828C4 /* AutoEnhancementViewController.swift */,
+				198BA87F2B1161C500D828C4 /* LumosViewController.swift */,
 			);
 			path = FilterVC;
 			sourceTree = "<group>";
@@ -188,12 +194,14 @@
 			files = (
 				19EACB112B0AC54700ECE599 /* CustomFilterViewController.swift in Sources */,
 				19C8CC2A2B0A54DB00B9D374 /* AppDelegate.swift in Sources */,
+				198BA8802B1161C500D828C4 /* LumosViewController.swift in Sources */,
 				198BA87C2B10F76100D828C4 /* CustomFilter.swift in Sources */,
 				1959CD872B0C2AB000EB693E /* SepiaViewController.swift in Sources */,
 				19EACB132B0AD2B900ECE599 /* RedEyeViewController.swift in Sources */,
 				19EACB0A2B0A857300ECE599 /* FilterListViewController.swift in Sources */,
 				19EACB082B0A848800ECE599 /* FilterCell.swift in Sources */,
 				1959CD892B0C346900EB693E /* InvertViewController.swift in Sources */,
+				198BA87E2B11505300D828C4 /* AutoEnhancementViewController.swift in Sources */,
 				19EACB0F2B0AC53000ECE599 /* ErrorBlurViewController.swift in Sources */,
 				19C8CC2C2B0A54DB00B9D374 /* SceneDelegate.swift in Sources */,
 				1959CD852B0C212900EB693E /* BlurViewController.swift in Sources */,
