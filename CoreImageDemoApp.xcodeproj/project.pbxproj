@@ -10,6 +10,7 @@
 		1959CD852B0C212900EB693E /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD842B0C212900EB693E /* BlurViewController.swift */; };
 		1959CD872B0C2AB000EB693E /* SepiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD862B0C2AB000EB693E /* SepiaViewController.swift */; };
 		1959CD892B0C346900EB693E /* InvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1959CD882B0C346900EB693E /* InvertViewController.swift */; };
+		198BA87C2B10F76100D828C4 /* CustomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198BA87B2B10F76100D828C4 /* CustomFilter.swift */; };
 		19C8CC2A2B0A54DB00B9D374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */; };
 		19C8CC2C2B0A54DB00B9D374 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */; };
 		19C8CC312B0A54DB00B9D374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C8CC2F2B0A54DB00B9D374 /* Main.storyboard */; };
@@ -18,7 +19,7 @@
 		19EACB082B0A848800ECE599 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB072B0A848800ECE599 /* FilterCell.swift */; };
 		19EACB0A2B0A857300ECE599 /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB092B0A857300ECE599 /* FilterListViewController.swift */; };
 		19EACB0F2B0AC53000ECE599 /* ErrorBlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB0E2B0AC53000ECE599 /* ErrorBlurViewController.swift */; };
-		19EACB112B0AC54700ECE599 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB102B0AC54700ECE599 /* FilterViewController.swift */; };
+		19EACB112B0AC54700ECE599 /* CustomFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB102B0AC54700ECE599 /* CustomFilterViewController.swift */; };
 		19EACB132B0AD2B900ECE599 /* RedEyeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		1959CD842B0C212900EB693E /* BlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
 		1959CD862B0C2AB000EB693E /* SepiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepiaViewController.swift; sourceTree = "<group>"; };
 		1959CD882B0C346900EB693E /* InvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertViewController.swift; sourceTree = "<group>"; };
+		198BA87B2B10F76100D828C4 /* CustomFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilter.swift; sourceTree = "<group>"; };
 		19C8CC262B0A54DB00B9D374 /* CoreImageDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreImageDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +38,7 @@
 		19EACB072B0A848800ECE599 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		19EACB092B0A857300ECE599 /* FilterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewController.swift; sourceTree = "<group>"; };
 		19EACB0E2B0AC53000ECE599 /* ErrorBlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBlurViewController.swift; sourceTree = "<group>"; };
-		19EACB102B0AC54700ECE599 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		19EACB102B0AC54700ECE599 /* CustomFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilterViewController.swift; sourceTree = "<group>"; };
 		19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedEyeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		198BA87A2B10F71C00D828C4 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				198BA87B2B10F76100D828C4 /* CustomFilter.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		19C8CC1D2B0A54DB00B9D374 = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +80,9 @@
 		19C8CC282B0A54DB00B9D374 /* CoreImageDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				19EACB0D2B0AC50E00ECE599 /* Filters */,
-				19EACB0C2B0A85A500ECE599 /* FilterList */,
+				198BA87A2B10F71C00D828C4 /* Filter */,
+				19EACB0D2B0AC50E00ECE599 /* FilterVC */,
+				19EACB0C2B0A85A500ECE599 /* FilterListVC */,
 				19C8CC292B0A54DB00B9D374 /* AppDelegate.swift */,
 				19C8CC2B2B0A54DB00B9D374 /* SceneDelegate.swift */,
 				19C8CC2F2B0A54DB00B9D374 /* Main.storyboard */,
@@ -82,26 +93,26 @@
 			path = CoreImageDemoApp;
 			sourceTree = "<group>";
 		};
-		19EACB0C2B0A85A500ECE599 /* FilterList */ = {
+		19EACB0C2B0A85A500ECE599 /* FilterListVC */ = {
 			isa = PBXGroup;
 			children = (
 				19EACB072B0A848800ECE599 /* FilterCell.swift */,
 				19EACB092B0A857300ECE599 /* FilterListViewController.swift */,
 			);
-			path = FilterList;
+			path = FilterListVC;
 			sourceTree = "<group>";
 		};
-		19EACB0D2B0AC50E00ECE599 /* Filters */ = {
+		19EACB0D2B0AC50E00ECE599 /* FilterVC */ = {
 			isa = PBXGroup;
 			children = (
 				19EACB0E2B0AC53000ECE599 /* ErrorBlurViewController.swift */,
-				19EACB102B0AC54700ECE599 /* FilterViewController.swift */,
+				19EACB102B0AC54700ECE599 /* CustomFilterViewController.swift */,
 				19EACB122B0AD2B900ECE599 /* RedEyeViewController.swift */,
 				1959CD842B0C212900EB693E /* BlurViewController.swift */,
 				1959CD862B0C2AB000EB693E /* SepiaViewController.swift */,
 				1959CD882B0C346900EB693E /* InvertViewController.swift */,
 			);
-			path = Filters;
+			path = FilterVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19EACB112B0AC54700ECE599 /* FilterViewController.swift in Sources */,
+				19EACB112B0AC54700ECE599 /* CustomFilterViewController.swift in Sources */,
 				19C8CC2A2B0A54DB00B9D374 /* AppDelegate.swift in Sources */,
+				198BA87C2B10F76100D828C4 /* CustomFilter.swift in Sources */,
 				1959CD872B0C2AB000EB693E /* SepiaViewController.swift in Sources */,
 				19EACB132B0AD2B900ECE599 /* RedEyeViewController.swift in Sources */,
 				19EACB0A2B0A857300ECE599 /* FilterListViewController.swift in Sources */,
