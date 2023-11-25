@@ -48,6 +48,7 @@ class LumosViewController: UIViewController {
             let filter = CIFilter.sunbeamsGenerator()
             filter.setValue(center, forKey: kCIInputCenterKey)
             filter.setValue(radius, forKey: "inputSunRadius")
+            filter.setValue(CIColor(red: 0.7, green: 0.7, blue: 0.9), forKey: kCIInputColorKey)
             
             if let output = filter.outputImage?.cropped(to: original.extent){
                 let result = composition(inputImage: output, backgroundImage: original)

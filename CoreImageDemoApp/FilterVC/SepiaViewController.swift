@@ -25,7 +25,7 @@ class SepiaViewController: UIViewController {
     }
     
     private func getIntencityString(radius: Float) -> String {
-        String(format: "Inencity: %.2f", radius)
+        String(format: "Intencity: %.2f", radius)
     }
     
     @IBAction func onSliderChanged(_ sender: Any) {
