@@ -23,11 +23,11 @@ class InvertViewController: UIViewController {
         if(toggle.isOn){
             imageView.image = applyFilter()
         }else{
-            imageView.image = setOriginalImage()
+            imageView.image = getOriginalImage()
         }
     }
     
-    private func setOriginalImage() -> UIImage? {
+    private func getOriginalImage() -> UIImage? {
         UIImage(named: "testImage.jpg")
     }
     
