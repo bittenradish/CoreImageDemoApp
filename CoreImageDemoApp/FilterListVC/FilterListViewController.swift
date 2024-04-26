@@ -11,7 +11,16 @@ private let reuseIdentifier = "filterCell"
 
 class FilterListViewController: UICollectionViewController {
     
-    private let filterList = ["Blur", "Bad Blur", "Sepia", "Invert color", "Lumos","Custom Filter", "Auto Enhancement"]
+    private let filterList = 
+    [
+        "Blur",
+//        "Bad Blur",
+        "Sepia",
+        "Invert color",
+        "Lumos",
+        "Custom Filter",
+        "Auto Enhancement"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()

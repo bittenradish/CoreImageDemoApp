@@ -10,39 +10,52 @@ import CoreImage
 
 class ErrorBlurViewController: UIViewController {
     
-    @MainActor
     @IBOutlet weak var imageView: UIImageView!
     
-    @MainActor
     @IBOutlet weak var slider: UISlider!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    
-    @IBAction func onSliderChanged(_ sender: Any) {
-        guard let originalImage = imageView.image else {
-            showAlet(message: "There is no image in imageView")
-            return
-        }
         
-        let cgFloat = CGFloat(slider.value)
-        Task(priority: .background) {
-            if let image = await self.applyFilter(filterValue: cgFloat, image: originalImage){
-                self.updateImage(image: image)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let image = self?.getOriginalImage() else {
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.imageView.image = image
             }
         }
     }
     
-    @MainActor
-    private func updateImage(image: UIImage){
-        imageView.image = image
+    private func getOriginalImage() -> UIImage? {
+        UIImage(named: "landscape.jpg")
     }
     
     
-    private func applyFilter(filterValue: CGFloat, image: UIImage) async -> UIImage? {
+    @IBAction func onSliderChanged(_ sender: Any) {
+        let sliderValue = slider.value
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let originalImage = self?.getOriginalImage() else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.showAlet(message: "There is no image in imageView")
+                }
+                return
+            }
+            
+            let cgFloat = CGFloat(sliderValue)
+            
+            if let image = self?.applyFilter(filterValue: cgFloat, image: originalImage){
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageView.image = image
+                }
+            }
+        }
+    }
+    
+    
+    private func applyFilter(filterValue: CGFloat, image: UIImage) -> UIImage? {
         let context = CIContext(options: nil)
         
         guard let ciImage = CIImage(image: image) else {
@@ -79,5 +92,24 @@ class ErrorBlurViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+}
+extension UIImage {
+    func resized(to newSize: CGSize, contentMode: UIView.ContentMode) -> UIImage? {
+        let horizontalRatio = newSize.width / size.width
+        let verticalRatio = newSize.height / size.height
+        let ratio = max(horizontalRatio, verticalRatio)
+
+        var newSize = newSize
+        if contentMode == .scaleAspectFit {
+            newSize.width = size.width * ratio
+            newSize.height = size.height * ratio
+        }
+
+        UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+
+        draw(in: CGRect(origin: .zero, size: newSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
